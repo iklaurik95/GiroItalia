@@ -22,14 +22,29 @@
 <%
 	ModeloCorredor modeloCorredor = new ModeloCorredor();
 	ModeloEtapa modeloEtapa = new ModeloEtapa();
-	
+	ModeloClasificacion modeloClasificacion = new ModeloClasificacion();
+		
 	ArrayList<Corredor> corredores = modeloCorredor.selectAll();
 	ArrayList<Etapa> etapas = modeloEtapa.selectAll();
+	ArrayList<Clasificacion> clasificaciones = modeloClasificacion.selectAll();
 	
-
-
+	String nuevoIdCorredor = request.getParameter("idCorredor");
+	String nuevoIdEtapa = request.getParameter("idEtapa");
+	String nuevoPosicion = request.getParameter("posicion");
+		
+	if(nuevoIdCorredor != null && nuevoIdEtapa != null && nuevoPosicion != null){
+		
+		Clasificacion clasificacion = new Clasificacion();
+		
+		clasificacion.setId_corredor(Integer.parseInt(nuevoIdCorredor));
+		clasificacion.setId_etapa(Integer.parseInt(nuevoIdEtapa));
+		clasificacion.setPosicion(Integer.parseInt(nuevoPosicion));
+		
+		modeloClasificacion.insertar(clasificacion);
+		
+	}
+	
 %>
-
 
 <body>
 	<div class="container">
@@ -38,15 +53,14 @@
 			<div class="col-md-12">
 				<div class="jumbotron">
 					<h1>Resultados de etapa</h1>
-					<h6>Formulario para introducir posiciones de corredores en
-						etapas</h6>
+					<h6>Formulario para introducir posiciones de corredores en etapas</h6>
 				</div>
-
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<form action="">
+				
 					<div class="form-group">
 						<h3>
 							<span class="label label-default">Corredor</span>
@@ -61,7 +75,6 @@
 							}
 						%>
 						</select>
-
 					</div>
 
 					<div class="form-group">
@@ -103,21 +116,15 @@
 						<th>id corredor</th>
 						<th>posicion</th>
 					</tr>
+					<%
+						for(Clasificacion clasificacion:clasificaciones){
+					%>
 					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>13</td>
+						<td><%=clasificacion.getId_etapa()%></td>
+						<td><%=clasificacion.getId_corredor()%></td>
+						<td><%=clasificacion.getPosicion()%></td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>2</td>
-						<td>4></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>4</td>
-						<td>56</td>
-					</tr>
+					<%}%>
 				</table>
 			</div>
 		</div>

@@ -27,10 +27,14 @@ public class ModeloCorredor extends Conectar{
 				Corredor corredor = new Corredor();
 				corredor.setId(rs.getInt("id"));
 				corredor.setNombre(rs.getString("nombre"));
+				corredor.setApellido(rs.getString("apellido"));
+				corredor.setNombre_grupo(rs.getString("equipo"));
 				
 				corredores.add(corredor);
-			}			
+			}	
+			
 			return corredores;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

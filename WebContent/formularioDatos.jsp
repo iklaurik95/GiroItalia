@@ -20,6 +20,7 @@
 <%@ page import="eus.azterketa.modelo.*"%>
 <%@ page import="java.util.*"%>
 <%
+
 	ModeloCorredor modeloCorredor = new ModeloCorredor();
 	ModeloEtapa modeloEtapa = new ModeloEtapa();
 	ModeloClasificacion modeloClasificacion = new ModeloClasificacion();
@@ -49,6 +50,7 @@
 <body>
 	<div class="container">
 		<br> <br>
+		
 		<div class="row">
 			<div class="col-md-12">
 				<div class="jumbotron">
@@ -57,6 +59,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<form action="">
@@ -103,11 +106,12 @@
 					<div class="form-group">
 						<button type="submit" value="guardar" class="btn btn-default">Guardar</button>
 					</div>
+					
 				</form>
 			</div>
-
 		</div>
-		<div class="row">
+		
+		<div class="row">		
 			<div class="col-md-10 col-md-offset-1">
 				<h2>Posicion de todos los corredores</h2>
 				<table class="table">
@@ -128,10 +132,10 @@
 				</table>
 			</div>
 		</div>
-		<!-- row bukaera -->
+		
 	</div>
 </body>
-<!-- Latest compiled and minified JavaScript -->
+
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

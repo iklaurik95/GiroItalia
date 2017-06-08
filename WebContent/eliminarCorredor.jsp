@@ -25,11 +25,11 @@
 
 	String nombreApellido = request.getParameter("nombreApellido");
 	String [] partes = nombreApellido.split(",");
-	String nombreCorredor = partes[0];
-	String apellidoCorredor = partes[1];
+	String nombre = partes[0];
+	String apellido = partes[1];
 	
-	if(nombreCorredor != null && apellidoCorredor != null){
-				
+	if(nombre != null && apellido != null){
+		modeloCorredor.eliminar(nombre, apellido);
 	}else{
 		System.out.print("El corredor no existe");
 	}

@@ -1,6 +1,7 @@
 package eus.azterketa.modelo;
 
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -42,6 +43,22 @@ public class ModeloCorredor extends Conectar{
 				
 		return corredores;
 		
+	}
+	
+	public void eliminar (String nombre, String apellido){
+		
+		try {
+			
+			PreparedStatement pst = cn.prepareStatement("DELETE FROM corredor WHERE nombre= ? AND apellido= ?");
+			pst.setString(1, nombre);
+			pst.setString(2, apellido);
+			
+			pst.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

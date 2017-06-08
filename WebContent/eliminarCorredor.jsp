@@ -17,6 +17,24 @@
 	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
 	crossorigin="anonymous">
 </head>
+<%@ page import="eus.azterketa.modelo.*"%>
+<%@ page import="java.util.*"%>
+<%
+
+	ModeloCorredor modeloCorredor = new ModeloCorredor();
+
+	String nombreApellido = request.getParameter("nombreApellido");
+	String [] partes = nombreApellido.split(",");
+	String nombreCorredor = partes[0];
+	String apellidoCorredor = partes[1];
+	
+	if(nombreCorredor != null && apellidoCorredor != null){
+				
+	}else{
+		System.out.print("El corredor no existe");
+	}
+
+%>
 <body>
 	<div class="container">
 		<br> <br>
@@ -35,7 +53,7 @@
 						<h3>
 							<span class="label label-default">Nombre de corredor</span>
 						</h3>
-						<input type="text" class="form-control" id="" name="" placeholder="Nombre, Apellido"/>
+						<input type="text" class="form-control" id="" name="nombreApellido" placeholder="Nombre, Apellido"/>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
@@ -46,9 +64,6 @@
 				</form>
 			</div>
 		</div>
-		
-		
-
 	</div>
 </body>
 <!-- Latest compiled and minified JavaScript -->

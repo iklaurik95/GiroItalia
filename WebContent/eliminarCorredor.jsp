@@ -20,19 +20,22 @@
 <%@ page import="eus.azterketa.modelo.*"%>
 <%@ page import="java.util.*"%>
 <%
-
-	ModeloCorredor modeloCorredor = new ModeloCorredor();
-
-	String nombreApellido = request.getParameter("nombreApellido");
-	String [] partes = nombreApellido.split(",");
-	String nombre = partes[0];
-	String apellido = partes[1];
-	
-	if(nombre != null && apellido != null){
-		modeloCorredor.eliminar(nombre, apellido);
-	}else{
-		System.out.print("El corredor no existe");
+		
+	if(request.getParameter("nombreApellido") != null){ //Eliminar botoiasakatzerakoan hau ejekutatuko da.
+		String nombreApellido = request.getParameter("nombreApellido");
+		String [] partes = nombreApellido.split(", ");
+		String nombre = partes[0];
+		String apellido = partes[1];
+		
+		ModeloCorredor modeloCorredor = new ModeloCorredor();
+		
+		if(modeloCorredor.comprobar(nombre,apellido)){
+			modeloCorredor.eliminar(nombre,apellido);
+		}else{
+			System.out.print("El corredor no existe");
+		}
 	}
+		
 
 %>
 <body>

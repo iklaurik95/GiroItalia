@@ -9,7 +9,7 @@ public class Conectar {
 	public Conectar() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/giro_italia";
+			String url = "jdbc:mysql://localhost/giroitalia";
 			cn = (Connection) DriverManager.getConnection(url, "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();

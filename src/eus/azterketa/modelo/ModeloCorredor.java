@@ -45,7 +45,7 @@ public class ModeloCorredor extends Conectar{
 		
 	}
 	
-	public void eliminar (String nombre, String apellido){
+	public void eliminar (String nombre,String apellido){
 		
 		try {
 			
@@ -61,11 +61,11 @@ public class ModeloCorredor extends Conectar{
 		}
 	}
 	
-	public boolean comprobar (String nombre, String apellido){
+	public boolean comprobar (String nombre,String apellido){
 		
 		try {
 			
-			PreparedStatement pst = this.cn.prepareStatement("SELECT FROM corredor WHERE nombre=? AND apellido=?");
+			PreparedStatement pst = this.cn.prepareStatement("SELECT * FROM corredor WHERE nombre=? AND apellido=?");
 			pst.setString(1, nombre);
 			pst.setString(2, apellido);
 			

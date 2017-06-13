@@ -49,7 +49,7 @@ public class ModeloCorredor extends Conectar{
 		
 		try {
 			
-			PreparedStatement pst = this.cn.prepareStatement("DELETE FROM corredor WHERE nombre=? AND apellido=?");
+			PreparedStatement pst = this.cn.prepareStatement("DELETE FROM corredor WHERE nombre=? AND apellido=? ");
 			pst.setString(1, nombre);
 			pst.setString(2, apellido);
 			
@@ -65,12 +65,12 @@ public class ModeloCorredor extends Conectar{
 		
 		try {
 			
-			PreparedStatement pst = this.cn.prepareStatement("SELECT FROM corredor WHERE nombre=? AND apellido=?");
+			PreparedStatement pst = this.cn.prepareStatement("SELECT * FROM corredor WHERE nombre= ? AND apellido= ? ");
 			pst.setString(1, nombre);
 			pst.setString(2, apellido);
 			
 			ResultSet rs = pst.executeQuery();
-			if(rs.next() == true){
+			if(rs.next()){
 				return true;
 			}else{
 				return false;

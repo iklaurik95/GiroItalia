@@ -29,8 +29,9 @@
 		
 		ModeloCorredor modeloCorredor = new ModeloCorredor();
 		
-		if(modeloCorredor.comprobar(nombre,apellido)){
-			modeloCorredor.eliminar(nombre,apellido);
+		if(modeloCorredor.comprobar(nombre, apellido)){
+			modeloCorredor.eliminar(nombre, apellido);
+			System.out.print("El corredor ha sido borrado");
 		}else{
 			System.out.print("El corredor no existe");
 		}

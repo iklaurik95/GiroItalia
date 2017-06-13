@@ -66,6 +66,7 @@ public class ModeloCorredor extends Conectar{
 		try {
 			
 			PreparedStatement pst = this.cn.prepareStatement("SELECT * FROM corredor WHERE nombre=? AND apellido=? ");
+
 			pst.setString(1, nombre);
 			pst.setString(2, apellido);
 			
